@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BLOG_POSTS, PHONE_DISPLAY, PHONE_HREF, SITE_NAME, STATIC_PAGES } from "@/lib/site-data";
 
@@ -6,7 +7,16 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div>
-          <p className="footer-title">{SITE_NAME}</p>
+          <div className="footer-brand">
+            <Image
+              src="/flushthegrease-logo.png"
+              alt={`${SITE_NAME} logo`}
+              width={56}
+              height={56}
+              className="footer-logo"
+            />
+            <p className="footer-title">{SITE_NAME}</p>
+          </div>
           <p className="footer-copy">
             Licensed grease trap cleaning and maintenance for restaurants, hotel kitchens, food courts, and commercial
             kitchens across Canada.

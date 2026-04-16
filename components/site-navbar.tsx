@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { PHONE_DISPLAY, PHONE_HREF, SITE_NAME } from "@/lib/site-data";
@@ -28,7 +29,14 @@ export function SiteNavbar() {
       <header className="site-header">
         <div className="shell nav-shell">
           <Link href="/" className="brand-mark" onClick={() => setOpen(false)}>
-            <span className="brand-badge">FTG</span>
+            <Image
+              src="/flushthegrease-logo.png"
+              alt={`${SITE_NAME} logo`}
+              width={48}
+              height={48}
+              className="brand-logo"
+              priority
+            />
             <span>
               <strong>{SITE_NAME}</strong>
               <small>Grease Trap Cleaning Canada</small>
