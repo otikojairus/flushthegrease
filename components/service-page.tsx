@@ -1,3 +1,5 @@
+import { faClock, faScrewdriverWrench, faShieldHalved, faTruckFast } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { PHONE_DISPLAY, PHONE_HREF, PRICING_ROWS, PROCESS_STEPS, SERVICE_CARDS, SOCIAL_PROOF, STARTING_PRICE, TRUST_POINTS } from "@/lib/site-data";
 
@@ -15,6 +17,13 @@ type ServicePageProps = {
   internalLinks?: Array<{ href: string; label: string }>;
   servicesTitle?: string;
 };
+
+const serviceIcons = {
+  "Commercial Cleaning": faScrewdriverWrench,
+  "Restaurant Service": faShieldHalved,
+  "Emergency Response": faTruckFast,
+  "Preventive Maintenance": faClock,
+} as const;
 
 function emphasizeFirstKeyword(paragraph: string, keyword: string) {
   const index = paragraph.toLowerCase().indexOf(keyword.toLowerCase());
@@ -107,7 +116,9 @@ export function ServicePage({
           <div className="card-grid four">
             {SERVICE_CARDS.map((card) => (
               <article key={card.title} className="content-card">
-                <p className="icon-chip">[ICON]</p>
+                <p className="icon-chip" aria-hidden="true">
+                  <FontAwesomeIcon icon={serviceIcons[card.title]} />
+                </p>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
               </article>
