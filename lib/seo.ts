@@ -1,7 +1,7 @@
 import { PHONE_DISPLAY, PHONE_E164, SITE_NAME, SITE_URL } from "@/lib/site-data";
 
 export function getSiteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL || SITE_URL;
+  return (process.env.NEXT_PUBLIC_SITE_URL || SITE_URL).replace(/\/+$/, "");
 }
 
 export function absoluteUrl(path: string) {
