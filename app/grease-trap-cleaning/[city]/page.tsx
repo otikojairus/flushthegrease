@@ -47,17 +47,18 @@ export default async function CityGreaseTrapCleaningPage({ params }: PageProps) 
   }
 
   const nearby = getNearbyCities(city.slug);
-  const industries = city.industries.join(", ");
+  const healthAuthority = city.healthAuthority ?? `local public health and wastewater authorities in ${city.provinceName}`;
+  const industries = city.industries?.join(", ") ?? "restaurants, hotel kitchens, food courts, franchise kitchens, and institutional food-service sites";
   const intro = [
     `If you need grease trap cleaning in ${city.name}, ${city.provinceAbbr}, you need a crew that understands how fast commercial kitchens can fall behind once grease buildup starts affecting drainage. FlushTheGrease helps ${city.name} restaurants, hotel kitchens, and food operators keep service moving with same-day support and clear documentation.`,
-    `${city.healthAuthority} expects commercial kitchens to stay on top of sanitation and wastewater risks, which is why local operators use scheduled cleaning to stay ahead of odours, overflow, and inspection pressure. We work with sites serving ${industries}, and we keep the process direct so managers can book fast by phone.`,
+    `Commercial kitchens in and around ${city.name} answer to ${healthAuthority}, which is why local operators use scheduled cleaning to stay ahead of odours, overflow, and inspection pressure. We work with sites serving ${industries}, and we keep the process direct so managers can book fast by phone.`,
     `Whether your kitchen is overdue for routine service or facing a same-day emergency, we provide grease trap cleaning in ${city.name} with flat-rate quoting, compliant waste handling, and a realistic maintenance plan for your location.`,
   ];
 
   const faqs = [
     {
       q: `How often should a grease trap be cleaned in ${city.name}?`,
-      a: `Most kitchens in ${city.name} need service every one to three months, but high-volume restaurants often need monthly visits. The right schedule depends on trap size, menu grease load, and how closely the site is monitored by ${city.healthAuthority}.`,
+      a: `Most kitchens in ${city.name} need service every one to three months, but high-volume restaurants often need monthly visits. The right schedule depends on trap size, menu grease load, and how closely the site is monitored by ${healthAuthority}.`,
     },
     {
       q: `What is included in your grease trap cleaning service in ${city.name}?`,

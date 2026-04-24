@@ -1,3 +1,5 @@
+import { ONTARIO_ADDITIONAL_LOCATIONS } from "@/lib/ontario-locations";
+
 export const SITE_NAME = "FlushTheGrease";
 export const SITE_URL = "https://flushthegrease.com";
 export const PHONE_DISPLAY = "1-888-328-8990";
@@ -44,9 +46,74 @@ export type CityPage = {
   name: string;
   provinceName: string;
   provinceAbbr: string;
-  healthAuthority: string;
-  industries: string[];
+  healthAuthority?: string;
+  industries?: string[];
 };
+
+function formatLocationName(rawName: string) {
+  const lowercaseWords = new Set(["a", "an", "and", "de", "du", "la", "le", "of", "on", "sur", "the"]);
+  const abbreviations: Record<string, string> = {
+    st: "St.",
+    ste: "Ste.",
+  };
+  const romanNumerals = new Set(["ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]);
+
+  return rawName
+    .toLowerCase()
+    .split(" ")
+    .map((word, wordIndex) =>
+      word
+        .split(/([-'])/)
+        .map((part, partIndex) => {
+          if (part === "-" || part === "'") {
+            return part;
+          }
+
+          if (!part) {
+            return part;
+          }
+
+          if (partIndex === 0 && part.length === 1) {
+            return part.toUpperCase();
+          }
+
+          if (part.length === 1) {
+            return part;
+          }
+
+          if (abbreviations[part]) {
+            return abbreviations[part];
+          }
+
+          if (romanNumerals.has(part)) {
+            return part.toUpperCase();
+          }
+
+          if ((wordIndex > 0 || partIndex > 0) && lowercaseWords.has(part)) {
+            return part;
+          }
+
+          if (part.startsWith("mc") && part.length > 2) {
+            return `Mc${part[2].toUpperCase()}${part.slice(3)}`;
+          }
+
+          return `${part[0].toUpperCase()}${part.slice(1)}`;
+        })
+        .join("")
+    )
+    .join(" ");
+}
+
+const ONTARIO_ADDITIONAL_CITY_PAGES: CityPage[] = ONTARIO_ADDITIONAL_LOCATIONS.split("\n").map((row) => {
+  const [slug, rawName] = row.split("|");
+
+  return {
+    slug,
+    name: formatLocationName(rawName),
+    provinceName: "Ontario",
+    provinceAbbr: "ON",
+  };
+});
 
 export const SERVICE_CARDS = [
   {
@@ -274,7 +341,7 @@ export const STATIC_PAGES: Record<StaticPageSlug, StaticPageContent> = {
   },
 };
 
-export const CITY_PAGES: CityPage[] = [
+const CORE_CITY_PAGES: CityPage[] = [
   { slug: "winnipeg", name: "Winnipeg", provinceName: "Manitoba", provinceAbbr: "MB", healthAuthority: "Winnipeg Regional Health Authority", industries: ["food manufacturing plants", "casual dining chains", "hotel kitchens"] },
   { slug: "calgary", name: "Calgary", provinceName: "Alberta", provinceAbbr: "AB", healthAuthority: "Alberta Health Services", industries: ["hotel kitchens", "oil and gas cafeterias", "restaurant groups"] },
   { slug: "vancouver", name: "Vancouver", provinceName: "British Columbia", provinceAbbr: "BC", healthAuthority: "Vancouver Coastal Health", industries: ["high-density restaurant districts", "sushi restaurants", "hotel kitchens"] },
@@ -327,6 +394,8 @@ export const CITY_PAGES: CityPage[] = [
   { slug: "saskatoon", name: "Saskatoon", provinceName: "Saskatchewan", provinceAbbr: "SK", healthAuthority: "Saskatchewan Health Authority", industries: ["campus kitchens", "family dining", "hotel restaurants"] },
   { slug: "whitehorse", name: "Whitehorse", provinceName: "Yukon", provinceAbbr: "YT", healthAuthority: "Yukon Environmental Health", industries: ["tourism kitchens", "lodges", "community dining rooms"] },
 ];
+
+export const CITY_PAGES: CityPage[] = [...CORE_CITY_PAGES, ...ONTARIO_ADDITIONAL_CITY_PAGES];
 
 export const BLOG_POSTS: BlogPost[] = [
   {
@@ -685,5 +754,32 @@ export function getNearbyCities(slug: string) {
     return [];
   }
 
-  return CITY_PAGES.filter((candidate) => candidate.slug !== slug && candidate.provinceAbbr === city.provinceAbbr).slice(0, 6);
+  const sameProvince = CITY_PAGES.filter((candidate) => candidate.provinceAbbr === city.provinceAbbr);
+  const cityIndex = sameProvince.findIndex((candidate) => candidate.slug === slug);
+
+  if (cityIndex === -1) {
+    return sameProvince.slice(0, 6);
+  }
+
+  const nearby: CityPage[] = [];
+
+  for (let offset = 1; offset < sameProvince.length && nearby.length < 6; offset += 1) {
+    const forward = sameProvince[cityIndex + offset];
+
+    if (forward) {
+      nearby.push(forward);
+    }
+
+    if (nearby.length >= 6) {
+      break;
+    }
+
+    const backward = sameProvince[cityIndex - offset];
+
+    if (backward) {
+      nearby.push(backward);
+    }
+  }
+
+  return nearby;
 }
