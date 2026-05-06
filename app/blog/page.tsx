@@ -4,7 +4,7 @@ import { BLOG_POSTS } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Grease Trap Cleaning Blog",
-  description: "Guides on grease trap cleaning, pricing, regulations, odours, and business operations for Canadian commercial kitchens.",
+  description: "Guides on grease trap cleaning, regulations, odours, and business operations for Canadian commercial kitchens.",
   alternates: { canonical: "/blog" },
 };
 
@@ -16,7 +16,7 @@ export default function BlogIndexPage() {
           <p className="eyebrow">Blog</p>
           <h1 className="hero-title">Grease Trap Articles For Kitchen Operators</h1>
           <p className="hero-subtitle">
-            Practical reading on cleaning schedules, compliance, pricing, and common grease trap problems in Canada.
+            Practical reading on cleaning schedules, compliance, and common grease trap problems in Canada.
           </p>
         </div>
       </section>

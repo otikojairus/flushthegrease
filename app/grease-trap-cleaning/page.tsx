@@ -28,7 +28,6 @@ export default function GreaseTrapCleaningPage() {
     url: absoluteUrl("/grease-trap-cleaning"),
     telephone: PHONE_E164,
     areaServed: { "@type": "Country", name: "Canada" },
-    priceRange: "Starting at $199",
     slogan: SOCIAL_PROOF,
   };
 
@@ -44,7 +43,7 @@ export default function GreaseTrapCleaningPage() {
         whyIntro={page.whyIntro}
         faqs={page.faqs}
         internalLinks={[
-          { href: "/grease-trap-cleaning-cost", label: "Grease Trap Cleaning Cost" },
+          { href: "/grease-trap-cleaning-cost", label: "Service Planning Guide" },
           { href: "/restaurant-grease-trap-cleaning", label: "Restaurant Grease Trap Cleaning" },
           { href: "/emergency-grease-trap-cleaning", label: "Emergency Grease Trap Cleaning" },
           { href: "/blog/how-often-should-grease-trap-be-cleaned", label: "How Often Should a Grease Trap Be Cleaned?" },

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     title: `${SITE_NAME} | Grease Trap Cleaning Canada`,
-    description: "National grease trap cleaning pages with pricing, emergency response, blog resources, and city landing pages.",
+    description: "National grease trap cleaning pages with emergency response, blog resources, and city landing pages.",
     url: absoluteUrl("/"),
     type: "website",
     siteName: SITE_NAME,
@@ -25,7 +25,6 @@ export default function HomePage() {
     name: SITE_NAME,
     url: absoluteUrl("/"),
     telephone: "+18883288990",
-    priceRange: "Starting at $199",
     areaServed: { "@type": "Country", name: "Canada" },
   };
 
@@ -82,16 +81,39 @@ export default function HomePage() {
       <section className="section-block">
         <div className="shell">
           <div className="section-head">
-            <p className="eyebrow">Core Pages</p>
-            <h2>Built for restaurant operators who need fast answers</h2>
+            <p className="eyebrow">Why Choose Us</p>
+            <h2>Why customers pick FlushTheGrease</h2>
+            <p>Reliable crews, clear communication, and cleaner kitchen operations without the usual runaround.</p>
           </div>
           <div className="card-grid four">
-            {Object.values(STATIC_PAGES).map((page) => (
-              <Link key={page.slug} href={`/${page.slug}`} className="content-card service-link-card">
-                <h3>{page.title}</h3>
-                <p>{page.metaDescription}</p>
-              </Link>
-            ))}
+            <article className="content-card">
+              <h3>Fast dispatch that protects service hours</h3>
+              <p>
+                Kitchen delays are expensive. We prioritize same-day scheduling when available and move quickly on
+                emergency calls so your team can keep operating.
+              </p>
+            </article>
+            <article className="content-card">
+              <h3>Technicians built for commercial kitchens</h3>
+              <p>
+                Our licensed and insured crews work in active food environments every day and know how to get in, get
+                it done, and keep disruption low.
+              </p>
+            </article>
+            <article className="content-card">
+              <h3>Compliance documentation you can use</h3>
+              <p>
+                Every service includes records that support health inspections, internal logs, and franchise reporting
+                requirements.
+              </p>
+            </article>
+            <article className="content-card">
+              <h3>Simple phone-first booking</h3>
+              <p>
+                One call gets you a clear service path, availability details, and immediate next steps. No long forms.
+                No waiting for a callback.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -135,7 +157,7 @@ export default function HomePage() {
           <div>
             <p className="eyebrow">Need help now?</p>
             <h2>Phone-only booking keeps dispatch fast.</h2>
-            <p>Call {PHONE_DISPLAY} and we will confirm pricing, availability, and the right service path immediately.</p>
+            <p>Call {PHONE_DISPLAY} and we will confirm availability and the right service path immediately.</p>
           </div>
           <a href={PHONE_HREF} className="btn btn-primary">
             Call {PHONE_DISPLAY}

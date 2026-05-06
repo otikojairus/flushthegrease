@@ -69,8 +69,8 @@ export default async function CityGreaseTrapCleaningPage({ params }: PageProps) 
       a: `Yes. Your visit includes records many operators keep on file for landlords, franchise reporting, and local health inspections. Good documentation makes it easier to show that the kitchen is maintaining the interceptor responsibly.`,
     },
     {
-      q: `How much does grease trap cleaning cost in ${city.name}?`,
-      a: "Pricing starts at $199 for small traps, with larger units priced based on size, buildup, and access. Emergency service may carry an added surcharge, but we explain the range before dispatch so you can approve the work confidently.",
+      q: `How do I plan grease trap service in ${city.name}?`,
+      a: "The best plan depends on trap size, grease volume, kitchen traffic, and access. We review your setup and recommend a practical routine schedule to help prevent emergencies and keep operations steady.",
     },
     {
       q: `How quickly can you respond in ${city.name}?`,
@@ -94,7 +94,6 @@ export default async function CityGreaseTrapCleaningPage({ params }: PageProps) 
       name: city.name,
       addressRegion: city.provinceAbbr,
     },
-    priceRange: "Starting at $199",
   };
 
   return (
@@ -108,8 +107,7 @@ export default async function CityGreaseTrapCleaningPage({ params }: PageProps) 
         whyTitle={`Why ${city.name} businesses trust us`}
         whyIntro={`Commercial kitchens in ${city.name} need fast service, clean paperwork, and a crew that can work around busy prep and service windows.`}
         servicesTitle={`Our grease trap cleaning services in ${city.name}`}
-        pricingTitle={`Grease Trap Cleaning Cost In ${city.name}`}
-        pricingIntro={`Pricing in ${city.name} depends on trap size, grease volume, access, and whether the visit is routine or urgent. Scheduled service is usually the most cost-effective option for busy kitchens.`}
+        pricingTitle={`Grease Trap Service In ${city.name}`}
         faqs={faqs}
         serviceAreas={nearby.map((area) => ({
           href: `/grease-trap-cleaning/${area.slug}`,
@@ -118,7 +116,7 @@ export default async function CityGreaseTrapCleaningPage({ params }: PageProps) 
         }))}
         internalLinks={[
           { href: "/grease-trap-cleaning", label: "Grease Trap Cleaning Canada" },
-          { href: "/grease-trap-cleaning-cost", label: "Grease Trap Cleaning Cost" },
+          { href: "/grease-trap-cleaning-cost", label: "Service Planning Guide" },
           { href: "/restaurant-grease-trap-cleaning", label: "Restaurant Grease Trap Cleaning" },
           { href: "/emergency-grease-trap-cleaning", label: "Emergency Grease Trap Cleaning" },
         ]}

@@ -1,7 +1,7 @@
 import { faClock, faScrewdriverWrench, faShieldHalved, faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { PHONE_DISPLAY, PHONE_HREF, PRICING_ROWS, PROCESS_STEPS, SERVICE_CARDS, SOCIAL_PROOF, STARTING_PRICE, TRUST_POINTS } from "@/lib/site-data";
+import { PHONE_DISPLAY, PHONE_HREF, PROCESS_STEPS, SERVICE_CARDS, SOCIAL_PROOF, TRUST_POINTS } from "@/lib/site-data";
 
 type ServicePageProps = {
   keyword: string;
@@ -12,7 +12,6 @@ type ServicePageProps = {
   whyIntro: string;
   faqs: Array<{ q: string; a: string }>;
   pricingTitle?: string;
-  pricingIntro?: string;
   serviceAreas?: Array<{ href: string; label: string; description: string }>;
   internalLinks?: Array<{ href: string; label: string }>;
   servicesTitle?: string;
@@ -50,7 +49,6 @@ export function ServicePage({
   whyIntro,
   faqs,
   pricingTitle,
-  pricingIntro,
   serviceAreas,
   internalLinks,
   servicesTitle = "Our Grease Trap Cleaning Services",
@@ -80,9 +78,9 @@ export function ServicePage({
 
           <aside className="hero-card">
             <p className="card-kicker">Trusted by 100+ kitchens across Canada</p>
-            <h2>{STARTING_PRICE}</h2>
+            <h2>Why kitchens choose FlushTheGrease</h2>
             <p>{SOCIAL_PROOF}</p>
-            <p className="phone-block">Call {PHONE_DISPLAY} for a direct quote and dispatch timing.</p>
+            <p className="phone-block">Call {PHONE_DISPLAY} for fast dispatch, clear communication, and compliant service.</p>
           </aside>
         </div>
       </section>
@@ -164,21 +162,38 @@ export function ServicePage({
 
       {pricingTitle ? (
         <section className="section-block">
-          <div className="shell content-card">
+          <div className="shell">
             <div className="section-head left">
-              <p className="eyebrow">Pricing</p>
-              <h2>{pricingTitle}</h2>
-              <p>{pricingIntro}</p>
+              <p className="eyebrow">Why Choose FlushTheGrease</p>
+              <h2>Why customers should pick FlushTheGrease</h2>
+              <p>We focus on speed, consistency, and cleaner operations so your team can stay focused on service.</p>
             </div>
-            <div className="pricing-table">
-              {PRICING_ROWS.map((row) => (
-                <div key={row.label} className="pricing-row">
-                  <span>{row.label}</span>
-                  <strong>{row.price}</strong>
-                </div>
-              ))}
+            <div className="card-grid four">
+              <article className="content-card">
+                <h3>Fast response when every hour matters</h3>
+                <p>
+                  We move quickly on routine and urgent calls to help reduce kitchen disruption and protect your service windows.
+                </p>
+              </article>
+              <article className="content-card">
+                <h3>Reliable crews that understand food operations</h3>
+                <p>
+                  Our technicians work in active commercial kitchens daily and know how to complete the job with minimal disruption.
+                </p>
+              </article>
+              <article className="content-card">
+                <h3>Clear documentation for inspections and reporting</h3>
+                <p>
+                  You get practical records your team can keep on file for health inspections, internal logs, and franchise requirements.
+                </p>
+              </article>
+              <article className="content-card">
+                <h3>Simple phone-first process</h3>
+                <p>
+                  One call gives you immediate next steps, realistic timing, and a straightforward service path without long back-and-forth.
+                </p>
+              </article>
             </div>
-            <p className="pricing-note">All prices include waste disposal and compliance documentation.</p>
           </div>
         </section>
       ) : null}
@@ -188,7 +203,7 @@ export function ServicePage({
           <div>
             <p className="eyebrow">Same-Day Help</p>
             <h2>Need service today?</h2>
-            <p>Call {PHONE_DISPLAY} now and we will confirm availability, pricing, and the fastest practical dispatch window.</p>
+            <p>Call {PHONE_DISPLAY} now and we will confirm availability and the fastest practical dispatch window.</p>
           </div>
           <a href={PHONE_HREF} className="btn btn-primary">
             Call {PHONE_DISPLAY}

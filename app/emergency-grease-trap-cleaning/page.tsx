@@ -28,7 +28,6 @@ export default function EmergencyGreaseTrapCleaningPage() {
     url: absoluteUrl("/emergency-grease-trap-cleaning"),
     telephone: PHONE_E164,
     areaServed: { "@type": "Country", name: "Canada" },
-    priceRange: "Starting at $199",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],

@@ -5,7 +5,6 @@ export const SITE_URL = "https://flushthegrease.com";
 export const PHONE_DISPLAY = "1-888-328-8990";
 export const PHONE_E164 = "+18883288990";
 export const PHONE_HREF = "tel:+18883288990";
-export const STARTING_PRICE = "Starting at $199";
 export const SOCIAL_PROOF = "5 years in business, 100+ clients served across Canada";
 
 export type StaticPageSlug =
@@ -23,7 +22,6 @@ export type StaticPageContent = {
   heroSubtitle: string;
   intro: string[];
   whyIntro: string;
-  pricingIntro?: string;
   faqs: Array<{ q: string; a: string }>;
 };
 
@@ -173,30 +171,23 @@ export const PROCESS_STEPS = [
   "If needed, we outline a maintenance schedule so you can avoid future shutdowns and keep inspectors satisfied.",
 ] as const;
 
-export const PRICING_ROWS = [
-  { label: "Small trap (under 50 gal)", price: "Starting at $199" },
-  { label: "Medium trap (50-100 gal)", price: "Starting at $299" },
-  { label: "Large trap (100-500 gal)", price: "Starting at $449" },
-  { label: "Emergency call-out", price: "Additional surcharge applies" },
-] as const;
-
 export const STATIC_PAGES: Record<StaticPageSlug, StaticPageContent> = {
   "grease-trap-cleaning": {
     slug: "grease-trap-cleaning",
     title: "Grease Trap Cleaning Canada",
     metaTitle: "Grease Trap Cleaning Canada | Call 24/7",
     metaDescription:
-      "Grease trap cleaning across Canada for restaurants and commercial kitchens. Same-day service, flat-rate pricing, and phone-only quotes at 1-888-328-8990.",
+      "Grease trap cleaning across Canada for restaurants and commercial kitchens. Same-day service, compliance documentation, and phone-only booking at 1-888-328-8990.",
     heroTitle: "Grease Trap Cleaning Across Canada",
     heroSubtitle:
       "Keep your kitchen open, compliant, and free from overflow risk with licensed grease trap cleaning and maintenance.",
     intro: [
       "If your trap is full, slow-draining, or starting to smell, **grease trap cleaning** cannot wait. Restaurant managers and commercial kitchen teams need a contractor who shows up quickly, works cleanly, and leaves behind the paperwork needed for compliance.",
-      "FlushTheGrease provides commercial grease trap cleaning for restaurants, hotels, food courts, and franchise operators across Canada. You get same-day scheduling when available, flat-rate pricing, and technicians who understand how to work around active kitchen operations.",
+      "FlushTheGrease provides commercial grease trap cleaning for restaurants, hotels, food courts, and franchise operators across Canada. You get same-day scheduling when available and technicians who understand how to work around active kitchen operations.",
       "Whether you manage one location or multiple sites, we help you stay ahead of local health authority inspections, reduce odour complaints, and prevent messy emergency shutdowns.",
     ],
     whyIntro:
-      "You need a contractor that keeps the process simple: one call, one clear quote, one crew that handles the dirty work properly.",
+      "You need a contractor that keeps the process simple: one call, one clear plan, one crew that handles the dirty work properly.",
     faqs: [
       {
         q: "How often should a grease trap be cleaned in Canada?",
@@ -222,42 +213,40 @@ export const STATIC_PAGES: Record<StaticPageSlug, StaticPageContent> = {
   },
   "grease-trap-cleaning-cost": {
     slug: "grease-trap-cleaning-cost",
-    title: "Grease Trap Cleaning Cost",
-    metaTitle: "Grease Trap Cleaning Cost | Pricing Guide",
+    title: "Grease Trap Service Planning",
+    metaTitle: "Grease Trap Service Planning | Canada",
     metaDescription:
-      "See grease trap cleaning cost ranges in Canada, what affects pricing, and when emergency surcharges apply. Call 1-888-328-8990 for a free quote.",
-    heroTitle: "Grease Trap Cleaning Cost In Canada",
+      "Plan grease trap service in Canada with practical scheduling guidance for busy kitchens. Call 1-888-328-8990 for direct support.",
+    heroTitle: "Grease Trap Service Planning In Canada",
     heroSubtitle:
-      "Understand what affects grease trap cleaning prices before you book, from trap size to service frequency and emergency timing.",
+      "Understand what affects service frequency and operational risk so you can keep your kitchen compliant and running smoothly.",
     intro: [
-      "If you are comparing **grease trap cleaning cost**, the biggest drivers are trap size, how full the unit is, and whether the visit is routine or urgent. A small interceptor that is serviced on schedule costs less to clean than a neglected unit packed with solids.",
-      "FlushTheGrease starts pricing at $199 for smaller units and keeps quoting straightforward. You will know what is included, what the emergency surcharge covers, and whether a maintenance schedule could lower your long-term spend.",
-      "For busy operators, the cheapest call is rarely the most affordable outcome. Preventive service helps you avoid kitchen downtime, odour complaints, blocked lines, and expensive emergency dispatches.",
+      "If you are planning **grease trap cleaning service**, the biggest operational factors are trap size, how full the unit is, and whether the visit is routine or urgent. A unit serviced on schedule is easier to manage than one left to overflow risk.",
+      "FlushTheGrease keeps planning straightforward. We confirm what your location needs, what the crew will handle, and how often your kitchen should be serviced to stay compliant.",
+      "For busy operators, consistency matters most. Preventive service helps you avoid kitchen downtime, odour complaints, blocked lines, and avoidable emergency dispatches.",
     ],
     whyIntro:
-      "Pricing should help you plan, not confuse you. We explain the real variables that change cost so you can budget with confidence.",
-    pricingIntro:
-      "Routine service is usually the most cost-effective option because the trap is easier to pump, clean, and document. Larger units, excessive buildup, difficult access, and after-hours call-outs can increase the final price.",
+      "Service planning should be practical, not confusing. We explain what changes frequency, urgency, and kitchen risk so you can schedule with confidence.",
     faqs: [
       {
-        q: "How much does grease trap cleaning cost?",
-        a: "Small traps typically start at $199, medium traps at $299, and larger commercial units at $449 and up. The final amount depends on capacity, grease volume, access conditions, and whether the job is routine or emergency service.",
+        q: "How often should grease trap service be scheduled?",
+        a: "Most commercial kitchens need service every one to three months, but high-volume kitchens may need more frequent visits. The right interval depends on trap size, menu output, and grease load.",
       },
       {
-        q: "What is included in the quoted price?",
-        a: "Our pricing includes pumping, cleaning, waste disposal, and compliance documentation. If a site has unusual access restrictions or needs emergency attendance after hours, we explain that before dispatch so there are no surprises.",
+        q: "What is included in your service visit?",
+        a: "Each visit includes pumping, cleaning, waste handling, and compliance documentation. If we find unusual buildup or access concerns, we explain the next steps clearly before completion.",
       },
       {
-        q: "Does regular maintenance lower grease trap cleaning prices?",
-        a: "Yes. Traps that are cleaned on schedule are faster to service and far less likely to need emergency pumping or line clearing. That usually means lower cost per visit and fewer disruptions to your kitchen.",
+        q: "Why is routine maintenance better than waiting for issues?",
+        a: "Routine service reduces overflow risk, odours, drainage problems, and urgent shutdowns. It also helps keep documentation current for inspections and internal operations.",
       },
       {
-        q: "What causes an emergency surcharge?",
-        a: "Emergency pricing applies when you need immediate dispatch, overnight service, or urgent response during weekends or holidays. Those calls require technician availability on short notice and are priced separately from planned maintenance visits.",
+        q: "When should I request emergency service?",
+        a: "Request emergency support when there is overflow risk, active blockage, strong recurring odour, or operational disruption that affects food-service safety.",
       },
       {
-        q: "Can you quote by phone?",
-        a: "Yes. Call 1-888-328-8990 with your trap size, kitchen type, and urgency. We will give you a fast quote range and let you know if we need any extra site details before dispatch.",
+        q: "Can I arrange service by phone?",
+        a: "Yes. Call 1-888-328-8990 with your trap size, kitchen type, and urgency. We will confirm the best service path and the fastest practical dispatch window.",
       },
     ],
   },
@@ -484,7 +473,7 @@ export const BLOG_POSTS: BlogPost[] = [
         title: "Typical grease trap cleaning schedules",
         body: [
           "Many restaurants are serviced every month or every two months. Smaller or lower-volume sites may stretch to quarterly cleaning, but only if grease levels stay controlled and the trap is inspected regularly.",
-          "A good rule is to avoid letting solids and grease occupy too much of the unit. Once buildup becomes heavy, odour, drainage issues, and emergency costs become far more likely.",
+          "A good rule is to avoid letting solids and grease occupy too much of the unit. Once buildup becomes heavy, odour, drainage issues, and emergency disruptions become far more likely.",
         ],
       },
       {
@@ -508,7 +497,7 @@ export const BLOG_POSTS: BlogPost[] = [
         title: "Why the service record matters as much as the cleaning",
         body: [
           "Service records help show that your kitchen follows an active maintenance schedule. That can matter for inspections, landlord files, franchise reporting, and internal operations planning.",
-          "A documented schedule also helps you budget better because you can compare routine service cost against the much higher cost of emergency pumping or forced downtime.",
+          "A documented schedule also helps your team plan better by reducing emergency pumping and forced downtime.",
         ],
       },
     ],
@@ -516,7 +505,7 @@ export const BLOG_POSTS: BlogPost[] = [
     conclusion:
       "The right cleaning frequency keeps your kitchen predictable, not reactive. When you set a realistic schedule and keep records current, grease trap service becomes a routine operating task instead of a crisis.",
     relatedPath: "/grease-trap-cleaning-cost",
-    relatedLabel: "Grease Trap Cleaning Cost",
+    relatedLabel: "Grease Trap Service Planning",
     faqs: [
       {
         q: "How often should a restaurant grease trap be cleaned?",
@@ -528,7 +517,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         q: "What happens if a grease trap is not cleaned often enough?",
-        a: "You increase the risk of odours, wastewater backup, line blockage, pest attraction, and failed inspections. Delayed cleaning also makes the service messier and can raise the final cost.",
+        a: "You increase the risk of odours, wastewater backup, line blockage, pest attraction, and failed inspections. Delayed cleaning also makes the service messier and harder to manage.",
       },
     ],
   },
@@ -700,7 +689,7 @@ export const BLOG_POSTS: BlogPost[] = [
         id: "sales",
         title: "How to win your first restaurant clients",
         body: [
-          "Operators respond well to direct offers: clear pricing, easy phone quotes, and same-day availability when possible. They do not want long forms or vague promises. They want to know whether you can solve a problem fast and document the work properly.",
+          "Operators respond well to direct offers: clear service scope, easy phone booking, and same-day availability when possible. They do not want long forms or vague promises. They want to know whether you can solve a problem fast and document the work properly.",
           "Niche positioning helps. If you present yourself as a grease trap cleaning specialist instead of a generic drain company, the offer is easier for restaurant managers to understand.",
         ],
       },

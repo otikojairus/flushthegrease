@@ -29,7 +29,6 @@ export default function GreaseTrapCleaningCostPage() {
       url: absoluteUrl("/grease-trap-cleaning-cost"),
       telephone: PHONE_E164,
       areaServed: { "@type": "Country", name: "Canada" },
-      priceRange: "Starting at $199",
     },
     {
       "@context": "https://schema.org",
@@ -46,14 +45,13 @@ export default function GreaseTrapCleaningCostPage() {
     <>
       <JsonLd data={schema} />
       <ServicePage
-        keyword="grease trap cleaning cost"
+        keyword="grease trap service planning"
         heroTitle={page.heroTitle}
         heroSubtitle={page.heroSubtitle}
         intro={page.intro}
-        whyTitle="Why operators trust our pricing process"
+        whyTitle="Why operators trust our service planning process"
         whyIntro={page.whyIntro}
         pricingTitle="Grease Trap Cleaning Cost In Canada"
-        pricingIntro={page.pricingIntro}
         faqs={page.faqs}
         internalLinks={[
           { href: "/grease-trap-cleaning", label: "Grease Trap Cleaning" },
