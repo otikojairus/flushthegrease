@@ -9,7 +9,7 @@ export const SOCIAL_PROOF = "5 years in business, 100+ clients served across Can
 
 export type StaticPageSlug =
   | "grease-trap-cleaning"
-  | "grease-trap-cleaning-cost"
+  | "grease-trap-service-planning"
   | "restaurant-grease-trap-cleaning"
   | "emergency-grease-trap-cleaning";
 
@@ -132,7 +132,7 @@ export const SERVICE_CARDS = [
   {
     title: "Preventive Maintenance",
     description:
-      "Routine service plans help you stay compliant, avoid costly call-outs, and protect staff, customers, and equipment.",
+      "Routine service plans help you stay compliant, avoid disruptive call-outs, and protect staff, customers, and equipment.",
   },
 ] as const;
 
@@ -146,8 +146,8 @@ export const TRUST_POINTS = [
     description: "You receive documented cleaning, waste handling, and service notes that support inspection readiness.",
   },
   {
-    title: "Transparent Flat-Rate Pricing",
-    description: "We quote clearly before work starts, with no forms, no hidden admin fees, and no vague upsells.",
+    title: "Clear Scope Before Dispatch",
+    description: "We confirm the service scope before work starts, with no forms and no vague upsells.",
   },
   {
     title: "Same-Day & Emergency Service",
@@ -211,8 +211,8 @@ export const STATIC_PAGES: Record<StaticPageSlug, StaticPageContent> = {
       },
     ],
   },
-  "grease-trap-cleaning-cost": {
-    slug: "grease-trap-cleaning-cost",
+  "grease-trap-service-planning": {
+    slug: "grease-trap-service-planning",
     title: "Grease Trap Service Planning",
     metaTitle: "Grease Trap Service Planning | Canada",
     metaDescription:
@@ -434,7 +434,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
       },
     ],
-    quote: "Routine grease trap cleaning is almost always cheaper than emergency downtime.",
+    quote: "Routine grease trap cleaning is almost always easier to manage than emergency downtime.",
     conclusion:
       "If your team is dealing with odour, overflow risk, or an overdue service schedule, act before it turns into a shutdown. A professional visit keeps the cleaning process safe, documented, and much easier on your kitchen schedule.",
     relatedPath: "/grease-trap-cleaning",
@@ -504,7 +504,7 @@ export const BLOG_POSTS: BlogPost[] = [
     quote: "If you only clean the trap after it smells, you are already late.",
     conclusion:
       "The right cleaning frequency keeps your kitchen predictable, not reactive. When you set a realistic schedule and keep records current, grease trap service becomes a routine operating task instead of a crisis.",
-    relatedPath: "/grease-trap-cleaning-cost",
+    relatedPath: "/grease-trap-service-planning",
     relatedLabel: "Grease Trap Service Planning",
     faqs: [
       {

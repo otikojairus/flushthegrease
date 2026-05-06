@@ -43,7 +43,7 @@ export default function RestaurantGreaseTrapCleaningPage() {
         faqs={page.faqs}
         internalLinks={[
           { href: "/grease-trap-cleaning", label: "Grease Trap Cleaning" },
-          { href: "/grease-trap-cleaning-cost", label: "Service Planning Guide" },
+          { href: "/grease-trap-service-planning", label: "Service Planning Guide" },
           { href: "/blog/grease-trap-cleaning-regulations-canada", label: "Grease Trap Cleaning Regulations In Canada" },
         ]}
       />

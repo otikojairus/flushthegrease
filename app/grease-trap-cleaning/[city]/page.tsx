@@ -52,7 +52,7 @@ export default async function CityGreaseTrapCleaningPage({ params }: PageProps) 
   const intro = [
     `If you need grease trap cleaning in ${city.name}, ${city.provinceAbbr}, you need a crew that understands how fast commercial kitchens can fall behind once grease buildup starts affecting drainage. FlushTheGrease helps ${city.name} restaurants, hotel kitchens, and food operators keep service moving with same-day support and clear documentation.`,
     `Commercial kitchens in and around ${city.name} answer to ${healthAuthority}, which is why local operators use scheduled cleaning to stay ahead of odours, overflow, and inspection pressure. We work with sites serving ${industries}, and we keep the process direct so managers can book fast by phone.`,
-    `Whether your kitchen is overdue for routine service or facing a same-day emergency, we provide grease trap cleaning in ${city.name} with flat-rate quoting, compliant waste handling, and a realistic maintenance plan for your location.`,
+    `Whether your kitchen is overdue for routine service or facing a same-day emergency, we provide grease trap cleaning in ${city.name} with clear service scope, compliant waste handling, and a realistic maintenance plan for your location.`,
   ];
 
   const faqs = [
@@ -116,7 +116,7 @@ export default async function CityGreaseTrapCleaningPage({ params }: PageProps) 
         }))}
         internalLinks={[
           { href: "/grease-trap-cleaning", label: "Grease Trap Cleaning Canada" },
-          { href: "/grease-trap-cleaning-cost", label: "Service Planning Guide" },
+          { href: "/grease-trap-service-planning", label: "Service Planning Guide" },
           { href: "/restaurant-grease-trap-cleaning", label: "Restaurant Grease Trap Cleaning" },
           { href: "/emergency-grease-trap-cleaning", label: "Emergency Grease Trap Cleaning" },
         ]}

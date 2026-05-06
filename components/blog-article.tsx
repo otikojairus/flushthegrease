@@ -42,7 +42,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
             <p>{post.conclusion}</p>
             <p>
               Need professional grease trap cleaning in Canada? FlushTheGrease offers licensed, same-day service
-              nationwide. Call us at <a href={PHONE_HREF}>{PHONE_DISPLAY}</a> for a free quote.
+              nationwide. Call us at <a href={PHONE_HREF}>{PHONE_DISPLAY}</a> for direct service support.
             </p>
             <p>
               Related service: <Link href={post.relatedPath}>{post.relatedLabel}</Link>

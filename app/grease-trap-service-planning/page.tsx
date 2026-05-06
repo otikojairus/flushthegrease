@@ -4,29 +4,29 @@ import { ServicePage } from "@/components/service-page";
 import { PHONE_E164, SITE_NAME, STATIC_PAGES } from "@/lib/site-data";
 import { absoluteUrl } from "@/lib/seo";
 
-const page = STATIC_PAGES["grease-trap-cleaning-cost"];
+const page = STATIC_PAGES["grease-trap-service-planning"];
 
 export const metadata: Metadata = {
   title: page.metaTitle,
   description: page.metaDescription,
-  alternates: { canonical: "/grease-trap-cleaning-cost" },
+  alternates: { canonical: "/grease-trap-service-planning" },
   openGraph: {
     title: page.metaTitle,
     description: page.metaDescription,
-    url: absoluteUrl("/grease-trap-cleaning-cost"),
+    url: absoluteUrl("/grease-trap-service-planning"),
     type: "website",
     siteName: SITE_NAME,
   },
 };
 
-export default function GreaseTrapCleaningCostPage() {
+export default function GreaseTrapServicePlanningPage() {
   const schema = [
     {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "ProfessionalService"],
       name: SITE_NAME,
       description: page.metaDescription,
-      url: absoluteUrl("/grease-trap-cleaning-cost"),
+      url: absoluteUrl("/grease-trap-service-planning"),
       telephone: PHONE_E164,
       areaServed: { "@type": "Country", name: "Canada" },
     },
@@ -51,7 +51,7 @@ export default function GreaseTrapCleaningCostPage() {
         intro={page.intro}
         whyTitle="Why operators trust our service planning process"
         whyIntro={page.whyIntro}
-        pricingTitle="Grease Trap Cleaning Cost In Canada"
+        pricingTitle="Grease Trap Service Planning In Canada"
         faqs={page.faqs}
         internalLinks={[
           { href: "/grease-trap-cleaning", label: "Grease Trap Cleaning" },

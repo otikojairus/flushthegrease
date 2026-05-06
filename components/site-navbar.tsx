@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_HREF, SITE_NAME } from "@/lib/site-data";
 
 const links = [
   { href: "/grease-trap-cleaning", label: "Cleaning" },
-  { href: "/grease-trap-cleaning-cost", label: "Service Guide" },
+  { href: "/grease-trap-service-planning", label: "Service Guide" },
   { href: "/restaurant-grease-trap-cleaning", label: "Restaurants" },
   { href: "/emergency-grease-trap-cleaning", label: "Emergency" },
   { href: "/blog", label: "Blog" },
